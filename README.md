@@ -1,9 +1,8 @@
 erlang-sandbox
 =====
 
-An OTP library
+Repository to learn some Erlang.
 
-Build
------
+Resources:
 
-    $ rebar3 compile
+- [Learn you some Erlang for great good!](https://learnyousomeerlang.com)
