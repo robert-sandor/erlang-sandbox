@@ -1,6 +1,6 @@
 -module(my_stack).
 
--export([new/0, length/1, push/2, pop/1]).
+-export([new/0, length/1, push/2, pop/1, peek/1]).
 
 -record(my_stack, {length = 0, items = []}).
 
@@ -17,3 +17,10 @@ pop(#my_stack{items = []}) ->
     error(empty_stack);
 pop(#my_stack{length = L, items = [Head | Tail]}) ->
     {Head, #my_stack{length = L - 1, items = Tail}}.
+
+peek(#my_stack{length = 0}) ->
+    error(empty_stack);
+peek(#my_stack{items = []}) ->
+    error(empty_stack);
+peek(Stack = #my_stack{items = [Head | Tail]}) ->
+    {Head, Stack}.
